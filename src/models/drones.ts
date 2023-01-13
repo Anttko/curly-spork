@@ -2,12 +2,12 @@ import mongoose from "mongoose";
 import { DroneViolator } from "../types";
 
 // data to be removed after 10 minutes
-export interface iDrone extends DroneViolator {
+interface iDrone extends DroneViolator {
     expiresAt?: Date;
 }
 
 const schema = new mongoose.Schema<iDrone>({
-    serialNumber: { type: String, required: true },
+    serialNumber: { type: String, required: true, unique: true },
     timestamp: { type: String, required: true },
     distance: { type: Number, required: true },
     positionX: { type: Number, required: true },

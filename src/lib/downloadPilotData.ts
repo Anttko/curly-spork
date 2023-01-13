@@ -10,5 +10,4 @@ export const getPilotData = async (pilotId: string) => {
         console.log(error)
         return {}
     }
-
 }

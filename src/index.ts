@@ -12,7 +12,7 @@ app.use(cors());
 
 
 info('connecting to', MONGODB_URI)
-
+mongoose.set('strictQuery', true)
 mongoose.connect(MONGODB_URI)
     .then(() => {
         info('connected to MongoDB')
@@ -28,8 +28,7 @@ app.get("/healthcheck", (_req, res) => {
 });
 app.use('/api/drones', droneRouter)
 
-
-
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
+    downloadDroneData()
 });
