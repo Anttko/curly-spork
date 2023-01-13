@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 import { DroneViolator } from "../types";
 
 // data to be removed after 10 minutes
-interface iDrone extends DroneViolator {
+export interface iDrone extends DroneViolator {
     expireAt?: Date;
 }
 /*

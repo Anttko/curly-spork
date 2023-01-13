@@ -4,12 +4,14 @@ import { Device } from '../types';
 import { getPilotData } from "./downloadPilotData";
 import { circleValues } from './values'
 import { Drones } from '../models/drones'
+
 /* 
 Reads the drone list from external api and checks if drone already exists in database.
 If drone does not exist, it calculates the distance between drone and circle center.
 If distance (d) is less than or equal to circle radius(100meters), it calls getPilotData function to get pilot data.
 After that it creates a new drone object and saves it to database.
 */
+
 const readData = async (drones: Device[], timestamp: string) => {
     drones.map(async (drone) => {
         const checkIfDronesExists = await Drones.findOne({ serialNumber: drone.serialNumber })
@@ -28,7 +30,7 @@ const readData = async (drones: Device[], timestamp: string) => {
                         ...pilotData
                     }
                     const newDrone = new Drones(violatedDrone)
-                    
+
                     await newDrone.save()
                 } catch (error) {
                     console.log(error)

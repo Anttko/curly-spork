@@ -9,7 +9,8 @@
     "dev": "ts-node-dev src/index.ts",
     "lint": "eslint --ext .ts .",
     "start": "node build/index.js",
-    "build": "tsc --build"
+    "build": "tsc --build",
+    "deploy": "rm -fr build/ && npm run build && flyctl deploy"
   },
   "repository": {
     "type": "git",
@@ -28,6 +29,7 @@
     "dotenv": "^16.0.3",
     "express": "^4.18.1",
     "fast-xml-parser": "^4.0.13",
+    "moment": "^2.29.4",
     "mongodb": "^4.13.0",
     "mongoose": "^6.8.3",
     "uuid": "^8.3.2"
