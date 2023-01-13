@@ -5,7 +5,9 @@ import { DroneViolator } from "../types";
 interface iDrone extends DroneViolator {
     expiresAt?: Date;
 }
-
+/*
+Serialnumber to be unique in the database
+*/
 const schema = new mongoose.Schema<iDrone>({
     serialNumber: { type: String, required: true, unique: true },
     timestamp: { type: String, required: true },
@@ -20,7 +22,7 @@ const schema = new mongoose.Schema<iDrone>({
 });
 
 schema.set("toJSON", {
-    transform: (_document: any, returnedObject): void => {
+    transform: (_document, returnedObject): void => {
         returnedObject.id = returnedObject._id.toString();
         delete returnedObject._id;
         delete returnedObject.__v;

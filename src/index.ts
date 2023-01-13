@@ -23,12 +23,12 @@ mongoose.connect(MONGODB_URI)
 
 app.get("/healthcheck", (_req, res) => {
     downloadDroneData()
-    console.log("someone pinged here");
+    info("someone pinged here");
     res.send("pong");
 });
 app.use('/api/drones', droneRouter)
 
 app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
+    info(`Server running on port ${PORT}`);
     downloadDroneData()
 });
