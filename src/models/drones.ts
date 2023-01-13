@@ -3,7 +3,7 @@ import { DroneViolator } from "../types";
 
 // data to be removed after 10 minutes
 interface iDrone extends DroneViolator {
-    expiresAt?: Date;
+    expireAt?: Date;
 }
 /*
 Serialnumber to be unique in the database
@@ -18,7 +18,7 @@ const schema = new mongoose.Schema<iDrone>({
     lastName: { type: String, required: true },
     phoneNumber: { type: String, required: true },
     email: { type: String, required: true },
-    expiresAt: { type: Date, expires: '10m', default: Date.now() }
+    expireAt: { type: Date, expires: 600, default: Date.now() }
 });
 
 schema.set("toJSON", {

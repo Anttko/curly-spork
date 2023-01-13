@@ -24,10 +24,11 @@ const readData = async (drones: Device[], timestamp: string) => {
                         distance: check / 1000, //  convert to meters
                         positionX: drone.positionX,
                         positionY: drone.positionY,
+                        expireAt: Date.now(),
                         ...pilotData
                     }
                     const newDrone = new Drones(violatedDrone)
-                    console.log(newDrone)
+                    
                     await newDrone.save()
                 } catch (error) {
                     console.log(error)
