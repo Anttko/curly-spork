@@ -1,6 +1,6 @@
 /*
 Small timer function, takes parameters interval and how long to be run if not reseted
-At the end database is cleared
+When timeout is finished, database is cleared
 */
 import { downloadDroneData } from "../lib/downloadDroneData";
 import { Drones } from "../models/drones";

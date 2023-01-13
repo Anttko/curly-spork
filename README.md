@@ -2,6 +2,5 @@
 
 ## Back-end for birdnest
 
-### Values for .env file
-MONGODB_URI="mongdb atlas url"
-PORT="3003"
+deployed to fly.io
+[https://curlyspork.fly.dev/api/drones](https://curlyspork.fly.dev/api/drones)
