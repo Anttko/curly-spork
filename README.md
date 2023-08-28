@@ -1,6 +1,24 @@
 # curly-spork
 
 ## Back-end for birdnest
+### Install
+```
+npm install
+```
+### Run in development
+```
+npm run dev
+```
+
+### Build
+```
+npm run build
+```
+
+### Deployment
+```
+npm run deploy
+```
 
 deployed to fly.io
 [https://curlyspork.fly.dev/api/drones](https://curlyspork.fly.dev/api/drones)
